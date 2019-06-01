@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Recycler View for choosing among categories.
+
         RecyclerView recyclerView = findViewById(R.id.rec1);
         List<String> l1 = new ArrayList<>();
 
@@ -31,8 +33,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(recyclerAdapterForHome);
     }
 
+    // method for going to particular category.
+
     public void seeContests(View view) {
         Intent intent = new Intent(this, ContestActivity.class);
         startActivity(intent);
     }
+
 }
