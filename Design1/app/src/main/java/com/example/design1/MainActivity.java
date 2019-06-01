@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Scene;
+import android.transition.Transition;
 import android.view.View;
 import android.widget.EditText;
 
@@ -12,13 +14,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Scene scene1, scene2,scene3;
+    private Transition transition;
+    private boolean start1, start2;
+
+
     public static final String EXTRA_MESSAGE = "message";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Recycler View for choosing among categories.
+
 
         RecyclerView recyclerView = findViewById(R.id.rec1);
         List<String> l1 = new ArrayList<>();
@@ -33,11 +41,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(recyclerAdapterForHome);
     }
 
-    // method for going to particular category.
-
     public void seeContests(View view) {
         Intent intent = new Intent(this, ContestActivity.class);
         startActivity(intent);
     }
 
+    public void goToLeaderBoard(View view) {
+        Intent intent = new Intent(this, LeaderboardActivity.class);
+        startActivity(intent);
+    }
 }

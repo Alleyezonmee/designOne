@@ -30,7 +30,8 @@ public class ContestActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(recyclerAdapterForContest);
     }
-    public void goToContest(View view) {
+
+    public void openContest(View view) {
         Intent intent = new Intent(this, QuestionActivity.class);
         startActivity(intent);
     }
